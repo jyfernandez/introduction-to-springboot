@@ -29,4 +29,15 @@ public class _2SampleRequestHandlingAnnotationController {
     public ResponseEntity<String> requestParam2(@RequestParam String requestParam2) {
         return  new ResponseEntity<String>(String.format("Request Param = '%s'", requestParam2), HttpStatus.OK);
     }
+
+    @GetMapping(value = "/sample/request-param/sample3")
+    public ResponseEntity<String> requestParam3(@RequestParam(value = "name", required = false) String requestParam3) {
+        return  new ResponseEntity<String>(String.format("Name = '%s'", requestParam3), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/sample/request-param/sample4")
+    public ResponseEntity<String> requestParam4(@RequestParam(value = "name", defaultValue = "Jane Doe") String requestParam4) {
+        return  new ResponseEntity<String>(String.format("Default Value = '%s'", requestParam4), HttpStatus.OK);
+    }
+
 }
