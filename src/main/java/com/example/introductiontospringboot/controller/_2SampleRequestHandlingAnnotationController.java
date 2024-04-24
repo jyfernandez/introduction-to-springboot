@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class _2SampleRequestHandlingAnnotationController {
@@ -19,4 +20,13 @@ public class _2SampleRequestHandlingAnnotationController {
         return  new ResponseEntity<String>(String.format("Hello %s!", name), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/sample/request-param/sample1")
+    public ResponseEntity<String> requestParam1(@RequestParam("requestParam") String requestParam1) {
+        return  new ResponseEntity<String>(String.format("Request Param = '%s'", requestParam1), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/sample/request-param/sample2")
+    public ResponseEntity<String> requestParam2(@RequestParam String requestParam2) {
+        return  new ResponseEntity<String>(String.format("Request Param = '%s'", requestParam2), HttpStatus.OK);
+    }
 }
