@@ -14,4 +14,8 @@ public class _1SampleRequestMappingController {
         return new ResponseEntity<String>("Hello World", HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/good-evening", method = RequestMethod.GET)
+    public ResponseEntity<String> goodEvening () {
+        return  new ResponseEntity<String>("Good Evening", HttpStatus.OK);
+    }
 }
