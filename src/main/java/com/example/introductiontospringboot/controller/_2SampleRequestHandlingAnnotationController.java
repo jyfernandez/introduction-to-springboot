@@ -14,4 +14,9 @@ public class _2SampleRequestHandlingAnnotationController {
         return  new ResponseEntity<String>(String.format("Hi %s!", name), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/sample/path-variable/hello/{name}")
+    public ResponseEntity<String> hello(@PathVariable String name) {
+        return  new ResponseEntity<String>(String.format("Hello %s!", name), HttpStatus.OK);
+    }
+
 }
