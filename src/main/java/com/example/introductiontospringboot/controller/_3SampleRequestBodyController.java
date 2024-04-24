@@ -13,7 +13,8 @@ public class _3SampleRequestBodyController {
 
     @PostMapping("/sample/request-body")
     public ResponseEntity<User> postUser (@RequestBody UserDTO user){
-        return  new ResponseEntity<User>(new User(user.first_name, user.last_name), HttpStatus.OK);
+        User newUser = User.builder().first_name(user.first_name).last_name(user.last_name).build();
+        return  new ResponseEntity<User>(newUser, HttpStatus.OK);
     }
 
 }
