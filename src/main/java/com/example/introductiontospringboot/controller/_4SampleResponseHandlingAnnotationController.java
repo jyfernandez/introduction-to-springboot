@@ -17,4 +17,9 @@ public class _4SampleResponseHandlingAnnotationController {
                         .build();
         return user;
     }
+
+    @GetMapping("/sample/exception")
+    public User throwException() throws Exception{
+        throw new Exception("exception");
+    }
 }
